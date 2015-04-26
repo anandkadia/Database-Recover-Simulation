@@ -1,0 +1,4 @@
+T3,BEGIN,,,,
+T3,READ,Z,,,
+T3,READ,Y,,,
+T3,WRITE,Y,0,5,

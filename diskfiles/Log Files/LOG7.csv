@@ -1,0 +1,4 @@
+T2,WRITE,Y,5,9,
+T2,COMMIT,,,,
+T4,READ,Y,,,
+T4,WRITE,Y,9,3,

@@ -1,0 +1,4 @@
+T2,WRITE,X,2,4,
+T2,WRITE,Z,8,6,
+T4,BEGIN,,,,
+T4,READ,V,,,

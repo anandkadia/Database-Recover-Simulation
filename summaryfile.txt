@@ -1,0 +1,36 @@
+T1 BEGINS and set ACTIVE.
+T1 READS Data-Item 'X' from Disk block.
+T1 WRITES Data-Item 'X' from 0 to 2
+T1 READS Data-Item 'Z' from Disk block.
+T3 BEGINS and set ACTIVE.
+T3 READS Data-Item 'Z' from cache memory
+T3 READS Data-Item 'Y' from Disk block.
+T3 WRITES Data-Item 'Y' from 0 to 5
+T1 WRITES Data-Item 'Z' from 0 to 8
+T1 COMMMITS AND FREES BUFFER MEMORY.
+T2 BEGINS and set ACTIVE.
+T2 READS Data-Item 'X' from Disk block.
+T2 READS Data-Item 'Z' from Disk block.
+~~~~~CHECKPOINT CREATED~~~~~
+T2 WRITES Data-Item 'X' from 2 to 4
+T2 WRITES Data-Item 'Z' from 8 to 6
+T4 BEGINS and set ACTIVE.
+T4 READS Data-Item 'V' from Disk block.
+T4 WRITES Data-Item 'V' from 0 to 1
+T3 WRITES Data-Item 'U' from 0 to 7
+T3 READS Data-Item 'U' from Disk block.
+T3 COMMMITS AND FREES BUFFER MEMORY.
+T2 READS Data-Item 'Y' from Disk block.
+T2 WRITES Data-Item 'Y' from 5 to 9
+T2 COMMMITS AND FREES BUFFER MEMORY.
+T4 READS Data-Item 'Y' from Disk block.
+T4 WRITES Data-Item 'Y' from 9 to 3
+~~~~~SYSTEM FAILURE~~~~~
+~~~~~REDO OPERATIONS~~~~~
+T2 WRITES Data-Item 'X' from 2 to 4
+T2 WRITES Data-Item 'Z' from 8 to 6
+T3 WRITES Data-Item 'U' from 0 to 7
+T2 WRITES Data-Item 'Y' from 5 to 9
+~~~~~UNDO OPERATIONS~~~~~
+T4 WRITES Data-Item 'Y' from 3 to 9
+T4 WRITES Data-Item 'V' from 1 to 0
